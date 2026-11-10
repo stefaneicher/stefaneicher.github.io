@@ -127,12 +127,17 @@
       display: flex; flex-direction: column; gap: 12px; background: var(--panel); border: 1px solid var(--line);
       border-radius: 14px; padding: 18px 18px 16px; transition: border-color .15s ease, transform .15s ease, background .15s ease;
     }
+    .project { position: relative; }
+    .project .name::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+    .live { position: relative; z-index: 1; margin-left: auto; font-size: 12px; font-weight: 600; color: var(--lime);
+            padding: 2px 9px; border-radius: 6px; border: 1px solid rgba(163, 216, 88, .45); }
+    .live:hover { background: var(--lime-soft); }
     .project:hover { border-color: rgba(42, 165, 161, .6); transform: translateY(-2px); background: var(--panel-2); }
     .project .name { display: flex; align-items: center; gap: 10px; font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 500; word-break: break-word; }
     .project .name::before { content: ""; flex: none; width: 8px; height: 8px; background: var(--teal); }
     .project.org .name::before { background: var(--lime); transform: rotate(29deg); }
     .owner { color: var(--dim); }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
     .tag { font-size: 11.5px; font-weight: 500; padding: 2px 9px; border-radius: 6px; background: var(--teal-soft); color: #4fc7c2; }
     .project.org .tag { background: var(--lime-soft); color: var(--lime); }
     .more { margin-top: 24px; font-size: 14px; }
@@ -259,30 +264,30 @@
       <p class="eyebrow">Projekte</p>
       <h2>Woran ich <em>gerade baue.</em></h2>
       <div class="projects">
-        <a class="project" href="https://github.com/stefaneicher/voice-bridge">
-          <span class="name">voice-bridge</span>
-          <span class="tags"><span class="tag">KI</span><span class="tag">Sprache</span></span>
-        </a>
-        <a class="project" href="https://github.com/stefaneicher/bergbahn-mcp">
-          <span class="name">bergbahn-mcp</span>
+        <div class="project">
+          <a class="name" href="https://github.com/stefaneicher/voice-bridge">voice-bridge</a>
+          <span class="tags"><span class="tag">KI</span><span class="tag">Sprache</span><a class="live" href="https://stefaneicher.github.io/voice-bridge/">Live-Seite ↗</a></span>
+        </div>
+        <div class="project">
+          <a class="name" href="https://github.com/stefaneicher/bergbahn-mcp">bergbahn-mcp</a>
           <span class="tags"><span class="tag">MCP</span><span class="tag">KI-Agenten</span></span>
-        </a>
-        <a class="project" href="https://github.com/stefaneicher/klappmcp">
-          <span class="name">klappmcp</span>
+        </div>
+        <div class="project">
+          <a class="name" href="https://github.com/stefaneicher/klappmcp">klappmcp</a>
           <span class="tags"><span class="tag">MCP</span></span>
-        </a>
-        <a class="project" href="https://github.com/stefaneicher/ux-plattform">
-          <span class="name">ux-plattform</span>
-          <span class="tags"><span class="tag">Architektur</span><span class="tag">UX</span></span>
-        </a>
-        <a class="project org" href="https://github.com/disroop/vs-code-conan">
-          <span class="name"><span><span class="owner">disroop/</span>vs-code-conan</span></span>
+        </div>
+        <div class="project">
+          <a class="name" href="https://github.com/stefaneicher/ux-plattform">ux-plattform</a>
+          <span class="tags"><span class="tag">Architektur</span><span class="tag">UX</span><a class="live" href="https://stefaneicher.github.io/ux-plattform/">Live-Seite ↗</a></span>
+        </div>
+        <div class="project org">
+          <a class="name" href="https://github.com/disroop/vs-code-conan"><span><span class="owner">disroop/</span>vs-code-conan</span></a>
           <span class="tags"><span class="tag">VS Code</span><span class="tag">Conan</span></span>
-        </a>
-        <a class="project org" href="https://github.com/disroop/mumoco">
-          <span class="name"><span><span class="owner">disroop/</span>mumoco</span></span>
+        </div>
+        <div class="project org">
+          <a class="name" href="https://github.com/disroop/mumoco"><span><span class="owner">disroop/</span>mumoco</span></a>
           <span class="tags"><span class="tag">Conan</span><span class="tag">Python</span></span>
-        </a>
+        </div>
       </div>
       <p class="more"><a href="https://github.com/stefaneicher?tab=repositories">Alle Repositories auf GitHub →</a></p>
     </section>
