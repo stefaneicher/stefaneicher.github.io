@@ -4,26 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stefan Eicher</title>
-  <meta name="description" content="Stefan Eicher – Software-Engineer: Embedded, C/C++, Java und KI-Agenten.">
-  <meta name="theme-color" content="#0b0f0e">
+  <meta name="description" content="Stefan Eicher – Senior Software-Architekt, Tech-Lead und Mitgründer der Disroop AG.">
+  <meta name="theme-color" content="#15151c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%235ee3a8'/><text x='32' y='42' font-family='Arial' font-weight='800' font-size='28' fill='%230b0f0e' text-anchor='middle'>SE</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2315151c'/><rect x='22' y='24' width='16' height='16' fill='%232aa5a1'/><rect x='22' y='44' width='16' height='16' fill='%23245e71'/><rect x='30' y='4' width='16' height='16' fill='%23a3d858' transform='rotate(29 38 12)'/></svg>">
   <style>
     :root {
-      --bg: #0b0f0e;
-      --bg-2: #101615;
-      --panel: #141b1a;
-      --panel-2: #1a2321;
-      --line: #24302d;
-      --text: #f2f5f4;
-      --muted: #8f9b98;
-      --dim: #5f6b68;
-      --mint: #5ee3a8;
-      --mint-soft: rgba(94, 227, 168, .12);
-      --orange: #f0a04b;
-      --orange-soft: rgba(240, 160, 75, .14);
+      --bg: #15151c;
+      --panel: #1d1d27;
+      --panel-2: #24242f;
+      --line: #2e2e3b;
+      --text: #edf6f3;
+      --muted: #9a9cab;
+      --dim: #686a7a;
+      --teal: #2aa5a1;
+      --teal-soft: rgba(42, 165, 161, .14);
+      --blue: #245e71;
+      --lime: #a3d858;
+      --lime-soft: rgba(163, 216, 88, .12);
       color-scheme: dark;
     }
     * { box-sizing: border-box; }
@@ -31,10 +31,9 @@
     body {
       margin: 0;
       background:
-        radial-gradient(900px 600px at 85% 10%, rgba(94, 227, 168, .10), transparent 60%),
-        radial-gradient(700px 500px at 0% 100%, rgba(94, 227, 168, .05), transparent 60%),
+        radial-gradient(900px 600px at 85% 5%, rgba(42, 165, 161, .14), transparent 60%),
+        radial-gradient(700px 500px at 0% 60%, rgba(36, 94, 113, .18), transparent 60%),
         var(--bg);
-      background-attachment: fixed;
       color: var(--text);
       font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -45,30 +44,28 @@
 
     /* Top bar */
     .top { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
-    .brand-mark {
-      width: 26px; height: 26px; border-radius: 7px; background: var(--mint); color: var(--bg);
-      display: grid; place-items: center; font-weight: 800; font-size: 11px; letter-spacing: -.02em;
-    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand svg { height: 30px; width: auto; display: block; }
+    .brand .who { padding-left: 14px; border-left: 1px solid var(--line); font-weight: 600; font-size: 15px; white-space: nowrap; }
     .pill {
       font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--orange); border: 1px solid rgba(240, 160, 75, .55); background: var(--orange-soft);
+      color: var(--lime); border: 1px solid rgba(163, 216, 88, .5); background: var(--lime-soft);
       padding: 5px 11px; border-radius: 7px; white-space: nowrap;
     }
     .pill::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--orange); margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 8px var(--orange); }
+      background: var(--lime); margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 8px var(--lime); }
 
     /* Hero */
     .hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; padding: 72px 0 96px; }
     h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; margin: 0 0 22px; }
-    h1 em { font-style: normal; color: var(--mint); }
-    .lead { color: #c3cbc9; font-size: 18px; max-width: 520px; margin: 0 0 32px; }
+    em { font-style: normal; color: var(--teal); }
+    .lead { color: #c6cad3; font-size: 18px; max-width: 520px; margin: 0 0 32px; }
 
     .points { list-style: none; margin: 0 0 36px; padding: 0; display: grid; gap: 16px; }
     .points li { display: flex; gap: 14px; align-items: flex-start; }
     .ibox {
       flex: none; width: 34px; height: 34px; border-radius: 9px; background: var(--panel-2);
-      border: 1px solid var(--line); display: grid; place-items: center; color: var(--mint);
+      border: 1px solid var(--line); display: grid; place-items: center; color: var(--teal);
     }
     .ibox svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .points b { display: block; font-size: 15px; font-weight: 600; }
@@ -81,45 +78,47 @@
       transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
     }
     .btn:hover { transform: translateY(-2px); border-color: var(--dim); }
-    .btn.primary { background: var(--mint); border-color: var(--mint); color: var(--bg); box-shadow: 0 8px 30px rgba(94, 227, 168, .25); }
-    .btn.primary:hover { box-shadow: 0 10px 40px rgba(94, 227, 168, .4); }
+    .btn.primary { background: var(--teal); border-color: var(--teal); color: #0d1716; box-shadow: 0 8px 30px rgba(42, 165, 161, .28); }
+    .btn.primary:hover { box-shadow: 0 10px 40px rgba(42, 165, 161, .45); }
     .btn svg { width: 18px; height: 18px; fill: currentColor; }
 
     /* Terminal */
     .term {
-      background: linear-gradient(180deg, #121918, #0e1413); border: 1px solid var(--line); border-radius: 16px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 255, 255, .02) inset; overflow: hidden;
+      background: linear-gradient(180deg, #1b1b24, #16161e); border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .5); overflow: hidden;
     }
     .term-bar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 12px; }
     .dots { display: flex; gap: 6px; }
-    .dots i { width: 10px; height: 10px; border-radius: 50%; background: #2a3532; }
-    .tab { background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; color: var(--text); }
-    .tab::before { content: "●"; color: var(--mint); margin-right: 6px; font-size: 9px; }
+    .dots i { width: 10px; height: 10px; border-radius: 50%; background: #34343f; }
+    .tab { background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; }
+    .tab::before { content: "●"; color: var(--teal); margin-right: 6px; font-size: 9px; }
     .path { color: var(--dim); }
     .term-body { padding: 20px 20px 24px; font-size: 13.5px; line-height: 1.75; }
     .term-body p { margin: 0; }
-    .p { color: var(--mint); }
+    .p { color: var(--teal); }
     .c { color: var(--muted); }
+    .y { color: var(--lime); }
     .hl {
-      margin: 12px 0; padding: 12px 14px; border-left: 2px solid var(--mint); background: var(--mint-soft);
-      border-radius: 0 8px 8px 0; color: #dbe4e2;
+      margin: 12px 0; padding: 12px 14px; border-left: 2px solid var(--lime); background: var(--lime-soft);
+      border-radius: 0 8px 8px 0; color: #e3ead8;
     }
-    .hl small { display: block; margin-top: 6px; color: var(--mint); font-size: 11px; }
-    .cursor { display: inline-block; width: 8px; height: 15px; background: var(--mint); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
+    .hl small { display: block; margin-top: 6px; color: var(--lime); font-size: 11px; }
+    .cursor { display: inline-block; width: 8px; height: 15px; background: var(--teal); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
     .caption { margin-top: 18px; font-size: 14px; color: var(--muted); }
     .caption b { color: var(--text); }
 
     /* Sections */
     section { padding: 80px 0; border-top: 1px solid var(--line); }
-    .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--mint); margin: 0 0 12px; }
+    .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); margin: 0 0 12px; }
     h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -.03em; line-height: 1.15; margin: 0 0 40px; font-weight: 800; }
-    h2 em { font-style: normal; color: var(--mint); }
 
     .focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
     .card .ibox { width: 40px; height: 40px; margin-bottom: 18px; }
     .card .ibox svg { width: 20px; height: 20px; }
+    .card:nth-child(2) .ibox { color: var(--lime); }
+    .card:nth-child(3) .ibox { color: #5fa9c2; }
     .card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -.01em; }
     .card p { margin: 0; font-size: 14.5px; color: var(--muted); }
 
@@ -128,24 +127,24 @@
       display: flex; flex-direction: column; gap: 12px; background: var(--panel); border: 1px solid var(--line);
       border-radius: 14px; padding: 18px 18px 16px; transition: border-color .15s ease, transform .15s ease, background .15s ease;
     }
-    .project:hover { border-color: rgba(94, 227, 168, .5); transform: translateY(-2px); background: var(--panel-2); }
+    .project:hover { border-color: rgba(42, 165, 161, .6); transform: translateY(-2px); background: var(--panel-2); }
     .project .name { display: flex; align-items: center; gap: 10px; font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 500; word-break: break-word; }
-    .project .name::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--mint); }
-    .project.org .name::before { background: var(--orange); }
+    .project .name::before { content: ""; flex: none; width: 8px; height: 8px; background: var(--teal); }
+    .project.org .name::before { background: var(--lime); transform: rotate(29deg); }
     .owner { color: var(--dim); }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { font-size: 11.5px; font-weight: 500; padding: 2px 9px; border-radius: 6px; background: var(--mint-soft); color: var(--mint); }
-    .project.org .tag { background: var(--orange-soft); color: var(--orange); }
+    .tag { font-size: 11.5px; font-weight: 500; padding: 2px 9px; border-radius: 6px; background: var(--teal-soft); color: #4fc7c2; }
+    .project.org .tag { background: var(--lime-soft); color: var(--lime); }
     .more { margin-top: 24px; font-size: 14px; }
-    .more a { color: var(--mint); font-weight: 600; }
+    .more a { color: var(--teal); font-weight: 600; }
 
     .stack { display: flex; flex-wrap: wrap; gap: 8px; }
-    .stack span { font-family: "JetBrains Mono", monospace; font-size: 13px; padding: 7px 12px; border-radius: 8px; background: var(--panel); border: 1px solid var(--line); color: #c3cbc9; }
+    .stack span { font-family: "JetBrains Mono", monospace; font-size: 13px; padding: 7px 12px; border-radius: 8px; background: var(--panel); border: 1px solid var(--line); color: #c6cad3; }
 
     .cta {
       display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
-      background: linear-gradient(135deg, rgba(94, 227, 168, .12), rgba(94, 227, 168, .02));
-      border: 1px solid rgba(94, 227, 168, .25); border-radius: 20px; padding: 40px;
+      background: linear-gradient(135deg, rgba(42, 165, 161, .16), rgba(36, 94, 113, .12));
+      border: 1px solid rgba(42, 165, 161, .3); border-radius: 20px; padding: 40px;
     }
     .cta h2 { margin: 0 0 8px; }
     .cta p { margin: 0; color: var(--muted); }
@@ -161,6 +160,8 @@
       .focus, .projects { grid-template-columns: 1fr; }
       .cta { grid-template-columns: 1fr; padding: 28px; }
       section { padding: 60px 0; }
+      .brand svg { height: 24px; }
+      .brand .who { display: none; }
       .pill { font-size: 10px; }
       .term-body { font-size: 12.5px; }
     }
@@ -169,26 +170,34 @@
 <body>
   <div class="wrap">
     <header class="top">
-      <a class="brand" href="#"><span class="brand-mark">SE</span>Stefan Eicher</a>
-      <span class="pill">Offen für Projekte</span>
+      <a class="brand" href="https://www.disroop.ch" aria-label="Disroop AG">
+        <svg viewBox="10 8 650 180" role="img" aria-hidden="true">
+          <text x="15" y="143.7" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="176.4" fill="#edf6f3">d<tspan fill-opacity="0">i</tspan>sroop</text>
+          <rect x="123.3" y="64.1" width="34.7" height="34.7" fill="#2aa5a1"/>
+          <rect x="123.3" y="108.9" width="34.7" height="34.7" fill="#245e71"/>
+          <rect x="136" y="-65.9" width="34.7" height="34.7" fill="#a3d858" transform="rotate(29.3)"/>
+        </svg>
+        <span class="who">Stefan Eicher</span>
+      </a>
+      <span class="pill">Tech-Lead · Architekt</span>
     </header>
 
     <div class="hero">
       <div>
-        <h1>Software von der Hardware <em>bis zum Agenten.</em></h1>
-        <p class="lead">Ich bin Stefan Eicher, Software-Engineer. Ich baue Firmware, Toolchains und Backends und seit neustem KI-Agenten, die echte Arbeit erledigen.</p>
+        <h1>Architektur, die vom Chip <em>bis zur Cloud trägt.</em></h1>
+        <p class="lead">Senior Software-Architekt und Mitgründer der Disroop AG. Aktuell Tech-Lead und Architekt bei der CSS. Über 20 Jahre von RTOS-Firmware bis zu Microservices.</p>
         <ul class="points">
           <li>
+            <span class="ibox"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg></span>
+            <div><b>Architektur &amp; Tech-Lead</b><span>Microservices, modulare und Clean Architecture, Teams technisch führen</span></div>
+          </li>
+          <li>
+            <span class="ibox"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div><b>Built-in Quality</b><span>TDD, CI/CD, Pipeline as Code, Code-Analyse und Coverage</span></div>
+          </li>
+          <li>
             <span class="ibox"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
-            <div><b>Embedded &amp; IoT</b><span>Firmware in C/C++ und Rust, STM32, nRF52, Zephyr</span></div>
-          </li>
-          <li>
-            <span class="ibox"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
-            <div><b>Toolchains &amp; Qualität</b><span>CMake, Conan, CppUTest, CI-Pipelines, Clean Code</span></div>
-          </li>
-          <li>
-            <span class="ibox"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01"/></svg></span>
-            <div><b>KI-Agenten &amp; MCP</b><span>Sprachmodelle verbunden mit echten Systemen und Daten</span></div>
+            <div><b>Embedded bis Web</b><span>C/C++ mit CMake und Conan, Java und Angular</span></div>
           </li>
         </ul>
         <div class="btns">
@@ -196,7 +205,7 @@
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             GitHub
           </a>
-          <a class="btn" href="#projekte">Projekte ansehen</a>
+          <a class="btn" href="https://www.disroop.ch">Disroop AG</a>
         </div>
       </div>
 
@@ -205,41 +214,43 @@
           <div class="term-bar">
             <span class="dots"><i></i><i></i><i></i></span>
             <span class="tab">stefan</span>
-            <span class="path">~/projekte</span>
+            <span class="path">~/laufbahn</span>
           </div>
           <div class="term-body">
-            <p><span class="p">$</span> whoami</p>
-            <p class="c">Stefan Eicher, Software-Engineer</p>
-            <p>&nbsp;</p>
-            <p><span class="p">$</span> ls ~/projekte --neueste</p>
-            <p class="c">voice-bridge  bergbahn-mcp  klappmcp</p>
-            <p class="c">sensor-playground  bf20-digital-twin</p>
-            <div class="hl">› Mach mir aus der Firmware, dem Build und dem Agenten ein System, das einfach läuft.<small>via voice-bridge</small></div>
-            <p><span class="p">copilot ›</span> Verstanden. Ich fange beim Build an <span class="cursor"></span></p>
+            <p><span class="p">$</span> git log --oneline --reverse</p>
+            <p><span class="y">2000</span> <span class="c">ABB · RTOS in C++ auf VxWorks</span></p>
+            <p><span class="y">2010</span> <span class="c">Bedag · Schnittstellen PERSISKA</span></p>
+            <p><span class="y">2014</span> <span class="c">Post, PostAuto · REST, CI, QS</span></p>
+            <p><span class="y">2017</span> <span class="c">Swisscom · Continuous Delivery</span></p>
+            <p><span class="y">2018</span> <span class="c">Disroop AG gegründet</span></p>
+            <p><span class="y">2019</span> <span class="c">Ypsomed · DevOps, Architektur</span></p>
+            <p><span class="y">2024</span> <span class="c">Tech-Lead Angebots-Komponente</span></p>
+            <div class="hl">› 100 % MC/DC-Coverage und 0 Issues in der Code-Analyse.<small>YpsoDose · Medizintechnik</small></div>
+            <p><span class="p">$</span> <span class="cursor"></span></p>
           </div>
         </div>
-        <p class="caption"><b>Vom Mikrocontroller bis zum Sprachmodell.</b> Ich mag Systeme, bei denen alle Teile zusammenpassen und gut getestet sind.</p>
+        <p class="caption"><b>Vom Mikrocontroller bis zum Microservice.</b> Gute Architektur sorgt dafür, dass alle Teile zusammenpassen.</p>
       </div>
     </div>
 
     <section id="fokus">
       <p class="eyebrow">Fokus</p>
-      <h2>Drei Ebenen, <em>ein System.</em></h2>
+      <h2>Drei Ebenen, <em>eine Architektur.</em></h2>
       <div class="focus">
         <div class="card">
-          <span class="ibox"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
-          <h3>Embedded &amp; IoT</h3>
-          <p>Firmware für Mikrocontroller wie STM32 und nRF52, Zephyr, Sensorik und digitale Zwillinge.</p>
+          <span class="ibox"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg></span>
+          <h3>Architektur &amp; Tech-Lead</h3>
+          <p>Verteilte Systeme und Schnittstellen entwerfen, Teams technisch führen, Code-Reviews und klare Verantwortlichkeiten.</p>
         </div>
         <div class="card">
-          <span class="ibox"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
-          <h3>Toolchains &amp; Qualität</h3>
-          <p>CMake, Conan, CppUTest und GoogleTest, CI-Pipelines und Clean Code, damit Software wartbar bleibt.</p>
+          <span class="ibox"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>DevOps &amp; Qualität</h3>
+          <p>Build-Server, Pipeline as Code, Docker, Modern CMake und Conan, TDD und Code-Analyse fest im Alltag verankern.</p>
         </div>
         <div class="card">
           <span class="ibox"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01"/></svg></span>
-          <h3>KI-Agenten &amp; MCP</h3>
-          <p>Agenten und MCP-Server, die Sprachmodelle mit echten Systemen und Daten verbinden.</p>
+          <h3>Embedded, Web &amp; KI</h3>
+          <p>Firmware für die Medizintechnik, Java- und Angular-Applikationen und KI-Agenten mit MCP.</p>
         </div>
       </div>
     </section>
@@ -268,9 +279,9 @@
           <span class="name">bf20-digital-twin</span>
           <span class="tags"><span class="tag">Digital Twin</span></span>
         </a>
-        <a class="project" href="https://github.com/stefaneicher/neigungsmesser">
-          <span class="name">neigungsmesser</span>
-          <span class="tags"><span class="tag">Sensorik</span></span>
+        <a class="project" href="https://github.com/stefaneicher/ux-plattform">
+          <span class="name">ux-plattform</span>
+          <span class="tags"><span class="tag">Architektur</span><span class="tag">UX</span></span>
         </a>
         <a class="project org" href="https://github.com/disroop/vs-code-conan">
           <span class="name"><span><span class="owner">disroop/</span>vs-code-conan</span></span>
@@ -292,9 +303,9 @@
       <p class="eyebrow">Werkzeuge</p>
       <h2>Womit ich <em>arbeite.</em></h2>
       <div class="stack">
-        <span>C</span><span>C++</span><span>Rust</span><span>Java</span><span>Quarkus</span><span>Spring</span>
-        <span>Python</span><span>TypeScript</span><span>CMake</span><span>Conan</span><span>Zephyr</span>
-        <span>STM32</span><span>Docker</span><span>Kubernetes</span><span>GitHub Actions</span><span>MCP</span>
+        <span>Java</span><span>Spring Boot</span><span>Java EE</span><span>OpenLiberty</span><span>Angular</span><span>TypeScript</span>
+        <span>C/C++</span><span>CMake</span><span>Conan</span><span>Maven</span><span>Docker</span><span>Jenkins</span>
+        <span>Azure</span><span>GitHub Actions</span><span>JUnit</span><span>GTest</span><span>CppUTest</span><span>MCP</span>
       </div>
     </section>
 
@@ -302,14 +313,17 @@
       <div class="cta">
         <div>
           <h2>Lass uns <em>etwas bauen.</em></h2>
-          <p>Ein gemeinsames Projekt oder einfach ein Austausch: Am schnellsten erreichst du mich über GitHub.</p>
+          <p>Ein gemeinsames Projekt oder einfach ein Austausch: Melde dich über GitHub oder die Disroop AG.</p>
         </div>
-        <a class="btn primary" href="https://github.com/stefaneicher">github.com/stefaneicher</a>
+        <div class="btns">
+          <a class="btn primary" href="https://www.disroop.ch">disroop.ch</a>
+          <a class="btn" href="https://github.com/stefaneicher">GitHub</a>
+        </div>
       </div>
     </section>
 
     <footer>
-      <span>© <span id="y">2026</span> Stefan Eicher</span>
+      <span>© <span id="y">2026</span> Stefan Eicher · Disroop AG</span>
       <span class="mono">gebaut mit HTML, CSS und etwas KI</span>
     </footer>
   </div>
